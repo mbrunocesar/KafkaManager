@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    build: TopicManager
+    restart: on-failure
+    ports:
+      - 7000:8080
+    volumes:
+      - ./TopicManager/.m2:/root/.m2
+    stdin_open: true
+    tty: true
+
