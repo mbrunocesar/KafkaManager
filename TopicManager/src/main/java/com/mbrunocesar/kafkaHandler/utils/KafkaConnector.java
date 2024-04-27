@@ -1,4 +1,4 @@
-package com.mbrunocesar.kafkaHandler.topicHandler.utils;
+package com.mbrunocesar.kafkaHandler.utils;
 
 import org.apache.kafka.clients.admin.Admin;
 import org.apache.kafka.clients.consumer.KafkaConsumer;

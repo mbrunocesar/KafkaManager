@@ -1,4 +1,4 @@
-package com.mbrunocesar.kafkaHandler.topicHandler.utils;
+package com.mbrunocesar.kafkaHandler.utils;
 
 import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicEntity;
 import org.apache.kafka.clients.admin.ListTopicsResult;

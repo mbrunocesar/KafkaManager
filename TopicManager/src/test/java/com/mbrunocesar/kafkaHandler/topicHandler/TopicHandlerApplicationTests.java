@@ -3,7 +3,6 @@ package com.mbrunocesar.kafkaHandler.topicHandler;
 import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicEntity;
 import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicService;
 import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicServiceImpl;
-import org.apache.kafka.clients.admin.NewTopic;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

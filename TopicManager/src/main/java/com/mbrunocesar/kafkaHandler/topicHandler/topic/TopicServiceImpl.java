@@ -1,6 +1,6 @@
 package com.mbrunocesar.kafkaHandler.topicHandler.topic;
 
-import com.mbrunocesar.kafkaHandler.topicHandler.utils.Formatter;
+import com.mbrunocesar.kafkaHandler.utils.Formatter;
 import org.apache.kafka.common.PartitionInfo;
 import org.springframework.stereotype.Service;
 

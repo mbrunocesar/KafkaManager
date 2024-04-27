@@ -1,17 +1,14 @@
 package com.mbrunocesar.kafkaHandler.topicHandler.topic;
 
-import com.mbrunocesar.kafkaHandler.topicHandler.utils.KafkaConnector;
+import com.mbrunocesar.kafkaHandler.utils.KafkaConnector;
 import org.apache.kafka.clients.admin.Admin;
-import org.apache.kafka.clients.admin.ListTopicsResult;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.PartitionInfo;
-import org.springframework.kafka.core.KafkaAdmin;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
 public class TopicRepository {
 
