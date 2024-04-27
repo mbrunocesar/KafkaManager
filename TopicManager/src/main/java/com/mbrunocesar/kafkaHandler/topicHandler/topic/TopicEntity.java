@@ -21,6 +21,7 @@ public class TopicEntity implements Serializable {
     @JsonProperty
     int numPartitions;
 
+    @JsonProperty
     int replicationFactor = 1;
 
     @JsonProperty
