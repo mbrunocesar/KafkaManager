@@ -5,20 +5,20 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class TopicController {
 
-    TopicService topicService;
+    private final TopicService topicService = new TopicServiceImpl();
 
     @PostMapping("/")
     public TopicEntity createTopic(@RequestBody TopicEntity topic) {
-        return topicService.create(topic);
+        return this.topicService.create(topic);
     }
 
-    @DeleteMapping("/:id")
-    public TopicEntity deleteTopic(String id) {
-        return topicService.delete(id);
+    @DeleteMapping("/{name}")
+    public TopicEntity deleteTopic(@PathVariable String name) {
+        return this.topicService.delete(name);
     }
 
     @RequestMapping("/")
     public TopicEntity[] getAll() {
-        return topicService.getAll();
+        return this.topicService.getAll();
     }
 }
