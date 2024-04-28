@@ -1,6 +1,6 @@
 package com.mbrunocesar.kafkaHandler.topicHandler.topic;
 
-import com.mbrunocesar.kafkaHandler.utils.KafkaConnector;
+import com.mbrunocesar.kafkaHandler.integrations.KafkaConnector;
 import org.apache.kafka.clients.admin.Admin;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.KafkaConsumer;

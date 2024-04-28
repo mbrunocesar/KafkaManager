@@ -1,4 +1,4 @@
-package com.mbrunocesar.kafkaHandler.utils;
+package com.mbrunocesar.kafkaHandler.integrations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,7 +24,9 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo());
     }
 
-    private ApiInfo apiInfo() {
+    private ApiInfo apiInfo(
+
+    ) {
         return new ApiInfoBuilder()
             .title("Simple Spring Boot REST API")
             .description("Um exemplo de aplicação Spring Boot REST API")
