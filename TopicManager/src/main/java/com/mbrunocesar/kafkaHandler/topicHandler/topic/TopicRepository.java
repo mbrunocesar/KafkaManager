@@ -5,11 +5,13 @@ import org.apache.kafka.clients.admin.Admin;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.PartitionInfo;
+import org.springframework.stereotype.Repository;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+@Repository
 public class TopicRepository {
 
     KafkaConnector kafkaConnector;
@@ -25,6 +27,7 @@ public class TopicRepository {
 
         return topicsMap;
     }
+
     public TopicEntity create(TopicEntity newTopic) {
         Admin kafkaAdmin = this.kafkaConnector.getAdmin();
 

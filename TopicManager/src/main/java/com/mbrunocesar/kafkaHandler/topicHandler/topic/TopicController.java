@@ -5,7 +5,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class TopicController {
 
-    private final TopicService topicService = new TopicServiceImpl();
+    private final TopicService topicService;
+
+    public TopicController(TopicService topicService) {
+        this.topicService = topicService;
+    }
+
 
     @PostMapping("/")
     public TopicEntity createTopic(@RequestBody TopicEntity topic) {
