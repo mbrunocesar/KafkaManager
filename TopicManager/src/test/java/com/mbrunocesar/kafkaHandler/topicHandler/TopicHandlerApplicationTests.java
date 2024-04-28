@@ -1,6 +1,7 @@
 package com.mbrunocesar.kafkaHandler.topicHandler;
 
 import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicEntity;
+import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicRepository;
 import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicService;
 import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicServiceImpl;
 import org.junit.jupiter.api.Test;
@@ -11,10 +12,10 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class topicHandlerApplicationTests {
 
-	TopicService topicService;
+	private final TopicService topicService;
 
 	public topicHandlerApplicationTests() {
-		topicService = new TopicServiceImpl();
+		this.topicService = new TopicServiceImpl(new TopicRepository());
 	}
 
 	private void clearTestTopics(TopicEntity[] topics) {
@@ -43,7 +44,6 @@ class topicHandlerApplicationTests {
 		}
 		return false;
 	}
-
 
 	@Test
 	void testBasicOperation() throws InterruptedException {
