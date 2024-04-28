@@ -2,10 +2,8 @@ package com.mbrunocesar.kafkaHandler.topicHandler.topic;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.kafka.clients.admin.NewTopic;
-import org.apache.kafka.common.PartitionInfo;
 
 import java.io.Serializable;
-import java.util.List;
 
 public class TopicEntity implements Serializable {
 
