@@ -24,13 +24,11 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo());
     }
 
-    private ApiInfo apiInfo(
-
-    ) {
+    private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-            .title("Simple Spring Boot REST API")
-            .description("Um exemplo de aplicação Spring Boot REST API")
-            .version("1.0.0")
+            .title("Kafka Topic Manager API")
+            .description("Spring Boot REST API for Kafka topic management")
+            .version("0.1.0")
             .license("Apache License Version 2.0")
             .licenseUrl("https://www.apache.org/licenses/LICENSE-2.0")
             .build();
