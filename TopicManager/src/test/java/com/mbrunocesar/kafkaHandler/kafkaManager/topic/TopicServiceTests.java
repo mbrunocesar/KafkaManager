@@ -1,21 +1,18 @@
-package com.mbrunocesar.kafkaHandler.kafkaManager;
+package com.mbrunocesar.kafkaHandler.kafkaManager.topic;
 
-import com.mbrunocesar.kafkaHandler.kafkaManager.topic.TopicEntity;
-import com.mbrunocesar.kafkaHandler.kafkaManager.topic.TopicRepository;
-import com.mbrunocesar.kafkaHandler.kafkaManager.topic.TopicService;
-import com.mbrunocesar.kafkaHandler.kafkaManager.topic.TopicServiceImpl;
+import com.mbrunocesar.kafkaHandler.kafkaManager.mocks.TopicRepositoryMock;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class TopicHandlerApplicationTests {
+class TopicServiceTests {
 
 	private final TopicService topicService;
 
-	public TopicHandlerApplicationTests() {
-		this.topicService = new TopicServiceImpl(new TopicRepository());
+	public TopicServiceTests() {
+		this.topicService = new TopicServiceImpl(new TopicRepositoryMock());
 	}
 
 	private void clearTestTopics(TopicEntity[] topics) {
@@ -55,29 +52,23 @@ class TopicHandlerApplicationTests {
 		assertEquals(0, countTestTopics(topics));
 
 		topicService.create(new TopicEntity("INTEGRATION_TEST_FirstTopic", 15, null));
-		Thread.sleep(100);
 
 		topicService.create(new TopicEntity("INTEGRATION_TEST_SecondTopic", 3, null));
-		Thread.sleep(100);
 
 		topicService.create(new TopicEntity("INTEGRATION_TEST_ThirdTopic", 4, null));
 
-		Thread.sleep(100);
 		topics = topicService.getAll();
 		assertEquals(3, countTestTopics(topics));
 
 		topicService.delete("INTEGRATION_TEST_SecondTopic");
 
-		Thread.sleep(100);
 		topics = topicService.getAll();
 		assertFalse(isInTopicList(topics, "INTEGRATION_TEST_SecondTopic"));
 		assertTrue(isInTopicList(topics, "INTEGRATION_TEST_FirstTopic"));
 
-		Thread.sleep(100);
 		topics = topicService.getAll();
 		assertEquals(2, countTestTopics(topics));
 
-		Thread.sleep(100);
 		clearTestTopics(topics);
 	}
 

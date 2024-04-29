@@ -1,13 +1,8 @@
 package com.mbrunocesar.kafkaHandler.kafkaManager.topic;
 
-import com.mbrunocesar.kafkaHandler.utils.Formatter;
-import org.apache.kafka.common.PartitionInfo;
-import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.util.List;
-import java.util.Map;
+import org.springframework.stereotype.Service;
 
 @Service
 public class TopicServiceImpl implements TopicService {
@@ -32,8 +27,6 @@ public class TopicServiceImpl implements TopicService {
 
     public TopicEntity[] getAll() {
         logger.info("[TOPIC SERVICE] Call to getAll()");
-        Map<String, List<PartitionInfo>> topicsMap = topicRepository.getAll();
-
-        return Formatter.convertFromKafkaMapToArray(topicsMap);
+        return topicRepository.getAll();
     }
 }

@@ -1,6 +1,7 @@
 package com.mbrunocesar.kafkaHandler.kafkaManager.topic;
 
 import com.mbrunocesar.kafkaHandler.integrations.KafkaConnector;
+import com.mbrunocesar.kafkaHandler.utils.Formatter;
 import org.apache.kafka.clients.admin.Admin;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -20,12 +21,12 @@ public class TopicRepository {
         kafkaConnector = new KafkaConnector();
     }
 
-    public Map<String, List<PartitionInfo>> getAll() {
+    public TopicEntity[] getAll() {
         KafkaConsumer<String, String> consumer = this.kafkaConnector.getConsumer();
         Map<String, List<PartitionInfo>> topicsMap = consumer.listTopics();
         consumer.close();
 
-        return topicsMap;
+        return Formatter.convertFromKafkaMapToArray(topicsMap);
     }
 
     public TopicEntity create(TopicEntity newTopic) {
