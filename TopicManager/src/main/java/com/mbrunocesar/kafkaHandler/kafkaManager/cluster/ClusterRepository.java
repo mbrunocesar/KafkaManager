@@ -1,6 +1,7 @@
 package com.mbrunocesar.kafkaHandler.kafkaManager.cluster;
 
 import com.mbrunocesar.kafkaHandler.integrations.KafkaConnector;
+import com.mbrunocesar.kafkaHandler.kafkaManager.cluster.dto.NodeEntity;
 import org.apache.kafka.clients.admin.Admin;
 import org.apache.kafka.clients.admin.DescribeClusterResult;
 import org.apache.kafka.common.Node;
@@ -33,16 +34,34 @@ public class ClusterRepository {
             throw new RuntimeException(e);
         }
 
-        logger.warn(kafkaNodes.toString());
+        Node node = kafkaNodes.iterator().next();
+        kafkaAdmin.close();
 
+        return new ClusterEntity(node.idString(), node.host(), node.port());
+    }
+
+    public NodeEntity[] getNodes() {
+        NodeEntity[] nodes;
+        Admin kafkaAdmin = this.kafkaConnector.getAdmin();
+
+        DescribeClusterResult description = kafkaAdmin.describeCluster();
+        Collection<Node> kafkaNodes = new LinkedList<Node>();
+
+        try {
+            kafkaNodes = description.nodes().get();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        nodes = new NodeEntity[kafkaNodes.size()];
+
+        int index = 0;
         for (Node node : kafkaNodes) {
-            logger.warn(node.toString());
+            nodes[index] = new NodeEntity(node.idString(), node.host(), node.port());
         }
 
         kafkaAdmin.close();
 
-
-        return new ClusterEntity("ok");
+        return nodes;
     }
-
 }

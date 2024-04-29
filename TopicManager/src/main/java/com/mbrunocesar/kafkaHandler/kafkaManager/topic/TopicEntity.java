@@ -29,6 +29,10 @@ public class TopicEntity implements Serializable {
         return name;
     }
 
+    public int getNumPartitions() {
+        return numPartitions;
+    }
+
     public NewTopic convertToKafkaEntity() {
         return new NewTopic(name, numPartitions, (short) replicationFactor);
     }
