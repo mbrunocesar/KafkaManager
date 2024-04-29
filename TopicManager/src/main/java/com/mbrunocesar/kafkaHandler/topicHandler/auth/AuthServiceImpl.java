@@ -26,6 +26,16 @@ public class AuthServiceImpl implements AuthService {
 
     public boolean isLoggedIn(AuthenticatedEntity auth) {
         logger.info("[AUTH SERVICE] Call to isLoggedIn() - " + auth.getEmail());
-        return authRepository.isLoggedIn(auth);
+        return authRepository.isLoggedIn(auth.getToken());
+    }
+
+    @Override
+    public boolean isValidToken(String bearerToken) throws Exception {
+        logger.info("[AUTH SERVICE] Call to isValidToken() - " + bearerToken);
+        if (!authRepository.isLoggedIn(bearerToken)) {
+            throw new Exception("Not Logged In");
+        }
+
+        return true;
     }
 }

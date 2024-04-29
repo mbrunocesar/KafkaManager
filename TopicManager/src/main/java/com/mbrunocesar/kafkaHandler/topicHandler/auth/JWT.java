@@ -22,7 +22,7 @@ public class JWT {
     }
 
     public String encode(String cypherData) {
-        return Base64.getEncoder().encodeToString(cypherData.getBytes());
+        return "Bearer " + Base64.getEncoder().encodeToString(cypherData.getBytes());
     }
 
     public String decode(String cypherData) {

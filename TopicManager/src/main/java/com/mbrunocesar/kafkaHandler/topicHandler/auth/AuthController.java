@@ -1,6 +1,5 @@
 package com.mbrunocesar.kafkaHandler.topicHandler.auth;
 
-import com.mbrunocesar.kafkaHandler.topicHandler.auth.dto.AuthEntity;
 import com.mbrunocesar.kafkaHandler.topicHandler.auth.dto.AuthInput;
 import com.mbrunocesar.kafkaHandler.topicHandler.auth.dto.AuthenticatedEntity;
 import org.springframework.web.bind.annotation.*;

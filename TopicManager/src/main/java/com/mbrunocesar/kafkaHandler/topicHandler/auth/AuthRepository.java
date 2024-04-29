@@ -31,8 +31,8 @@ public class AuthRepository {
         return response;
     }
 
-    public boolean isLoggedIn(AuthenticatedEntity auth) {
-        return auth.getToken() != null;
+    public boolean isLoggedIn(String bearerToken) {
+        return bearerToken!= null && bearerToken.startsWith("Bearer ");
     }
 
 }

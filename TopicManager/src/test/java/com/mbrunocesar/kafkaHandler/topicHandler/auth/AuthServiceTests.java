@@ -34,6 +34,9 @@ class AuthServiceTests {
 
 		AuthenticatedEntity authenticatedWithFailure = this.authService.login(new AuthInput("mbrunocesar@gmail.com", "123465"));
 		assertFalse(this.authService.isLoggedIn(authenticatedWithFailure));
+
+		AuthenticatedEntity pseudoAuthenticated = new AuthenticatedEntity("mbrunocesar@gmail.com", "must_fail", true);
+		assertFalse(this.authService.isLoggedIn(pseudoAuthenticated));
 	}
 
 }

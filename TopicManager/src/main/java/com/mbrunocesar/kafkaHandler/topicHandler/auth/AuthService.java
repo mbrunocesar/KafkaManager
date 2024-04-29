@@ -8,4 +8,6 @@ public interface AuthService {
 
     public boolean isLoggedIn(AuthenticatedEntity auth);
 
+    public boolean isValidToken(String bearerToken) throws Exception;
+
 }
