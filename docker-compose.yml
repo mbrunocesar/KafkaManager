@@ -3,17 +3,17 @@ version: "3.8"
 services:
   app:
     build: TopicManager
-    networks:
-      - broker-kafka
     depends_on:
       - kafka
-    restart: on-failure
-    ports:
-      - 7000:8080
-    volumes:
-      - ./TopicManager/.m2:/root/.m2
     environment:
       KAFKA_ENDPOINT: "172.17.0.1:9092"
+    networks:
+      - broker-kafka
+    ports:
+      - 7000:8080
+    restart: on-failure
+    volumes:
+      - ./TopicManager/.m2:/root/.m2
     stdin_open: true
     tty: true
 
