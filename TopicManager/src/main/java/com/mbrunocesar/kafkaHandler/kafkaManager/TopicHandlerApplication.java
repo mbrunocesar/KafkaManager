@@ -1,4 +1,4 @@
-package com.mbrunocesar.kafkaHandler.topicHandler;
+package com.mbrunocesar.kafkaHandler.kafkaManager;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

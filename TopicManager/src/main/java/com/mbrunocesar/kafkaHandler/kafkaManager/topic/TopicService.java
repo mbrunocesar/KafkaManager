@@ -1,4 +1,4 @@
-package com.mbrunocesar.kafkaHandler.topicHandler.topic;
+package com.mbrunocesar.kafkaHandler.kafkaManager.topic;
 
 public interface TopicService {
     public TopicEntity create(TopicEntity newTopic);

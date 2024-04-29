@@ -1,6 +1,6 @@
-package com.mbrunocesar.kafkaHandler.topicHandler.topic;
+package com.mbrunocesar.kafkaHandler.kafkaManager.topic;
 
-import com.mbrunocesar.kafkaHandler.topicHandler.auth.AuthService;
+import com.mbrunocesar.kafkaHandler.kafkaManager.auth.AuthService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 public class TopicController {
 
     private final TopicService topicService;
+
     private final AuthService authService;
 
     public TopicController(TopicService topicService, AuthService authService) {

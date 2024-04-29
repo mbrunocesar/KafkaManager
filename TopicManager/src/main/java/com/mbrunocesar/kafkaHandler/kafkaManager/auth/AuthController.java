@@ -1,7 +1,7 @@
-package com.mbrunocesar.kafkaHandler.topicHandler.auth;
+package com.mbrunocesar.kafkaHandler.kafkaManager.auth;
 
-import com.mbrunocesar.kafkaHandler.topicHandler.auth.dto.AuthInput;
-import com.mbrunocesar.kafkaHandler.topicHandler.auth.dto.AuthenticatedEntity;
+import com.mbrunocesar.kafkaHandler.kafkaManager.auth.dto.AuthInput;
+import com.mbrunocesar.kafkaHandler.kafkaManager.auth.dto.AuthenticatedEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

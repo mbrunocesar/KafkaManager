@@ -1,4 +1,4 @@
-package com.mbrunocesar.kafkaHandler.topicHandler.topic;
+package com.mbrunocesar.kafkaHandler.kafkaManager.topic;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.kafka.clients.admin.NewTopic;

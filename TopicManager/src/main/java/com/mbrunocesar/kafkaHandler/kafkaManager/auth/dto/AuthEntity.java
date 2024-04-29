@@ -1,4 +1,4 @@
-package com.mbrunocesar.kafkaHandler.topicHandler.auth.dto;
+package com.mbrunocesar.kafkaHandler.kafkaManager.auth.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

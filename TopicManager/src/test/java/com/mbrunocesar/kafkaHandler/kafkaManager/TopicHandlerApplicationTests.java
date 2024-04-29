@@ -1,20 +1,20 @@
-package com.mbrunocesar.kafkaHandler.topicHandler;
+package com.mbrunocesar.kafkaHandler.kafkaManager;
 
-import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicEntity;
-import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicRepository;
-import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicService;
-import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicServiceImpl;
+import com.mbrunocesar.kafkaHandler.kafkaManager.topic.TopicEntity;
+import com.mbrunocesar.kafkaHandler.kafkaManager.topic.TopicRepository;
+import com.mbrunocesar.kafkaHandler.kafkaManager.topic.TopicService;
+import com.mbrunocesar.kafkaHandler.kafkaManager.topic.TopicServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-class topicHandlerApplicationTests {
+class TopicHandlerApplicationTests {
 
 	private final TopicService topicService;
 
-	public topicHandlerApplicationTests() {
+	public TopicHandlerApplicationTests() {
 		this.topicService = new TopicServiceImpl(new TopicRepository());
 	}
 

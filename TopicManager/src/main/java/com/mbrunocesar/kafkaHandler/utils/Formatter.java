@@ -1,6 +1,6 @@
 package com.mbrunocesar.kafkaHandler.utils;
 
-import com.mbrunocesar.kafkaHandler.topicHandler.topic.TopicEntity;
+import com.mbrunocesar.kafkaHandler.kafkaManager.topic.TopicEntity;
 import org.apache.kafka.common.PartitionInfo;
 
 import java.util.List;
