@@ -21,7 +21,7 @@ public class ClusterController {
 
     @GetMapping("/status")
     public ClusterEntity getStatus(
-            @RequestHeader(name = "Authorization", required = false) String bearerToken) throws Exception {
+            @RequestHeader(name = "Authorization") String bearerToken) throws Exception {
         authService.isValidToken(bearerToken);
 
         return this.clusterService.getStatus();
@@ -29,7 +29,7 @@ public class ClusterController {
 
     @GetMapping("/nodes")
     public NodeEntity[] getNodes(
-            @RequestHeader(name = "Authorization", required = false) String bearerToken) throws Exception {
+            @RequestHeader(name = "Authorization") String bearerToken) throws Exception {
         authService.isValidToken(bearerToken);
 
         return this.clusterService.getNodes();

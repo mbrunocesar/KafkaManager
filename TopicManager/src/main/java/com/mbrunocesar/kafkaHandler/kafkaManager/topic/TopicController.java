@@ -18,7 +18,7 @@ public class TopicController {
 
     @PostMapping()
     public TopicEntity createTopic(
-            @RequestHeader(name = "Authorization", required = false) String bearerToken,
+            @RequestHeader(name = "Authorization") String bearerToken,
             @RequestBody TopicEntity topic) throws Exception {
         authService.isValidToken(bearerToken);
 
@@ -27,7 +27,7 @@ public class TopicController {
 
     @DeleteMapping("/{name}")
     public TopicEntity deleteTopic(
-            @RequestHeader(name = "Authorization", required = false) String bearerToken,
+            @RequestHeader(name = "Authorization") String bearerToken,
             @PathVariable String name) throws Exception {
         authService.isValidToken(bearerToken);
 
@@ -36,7 +36,7 @@ public class TopicController {
 
     @GetMapping()
     public TopicEntity[] getAll(
-            @RequestHeader(name = "Authorization", required = false) String bearerToken) throws Exception {
+            @RequestHeader(name = "Authorization") String bearerToken) throws Exception {
         authService.isValidToken(bearerToken);
 
         return this.topicService.getAll();
