@@ -34,7 +34,7 @@ public class TopicController {
         return this.topicService.delete(name);
     }
 
-    @RequestMapping()
+    @GetMapping()
     public TopicEntity[] getAll(
             @RequestHeader(name = "Authorization", required = false) String bearerToken) throws Exception {
         authService.isValidToken(bearerToken);

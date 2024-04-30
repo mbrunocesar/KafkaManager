@@ -14,10 +14,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class ClusterServiceTests {
 
 	private final ClusterService clusterService;
-	private final TopicService topicService;
 
-	public ClusterServiceTests() {
-		this.topicService = new TopicServiceImpl(new TopicRepositoryMock());
+    public ClusterServiceTests() {
+        TopicService topicService = new TopicServiceImpl(new TopicRepositoryMock());
 		this.clusterService = new ClusterServiceImpl(new ClusterRepositoryMock(), topicService);
 
 		topicService.create(new TopicEntity("INTEGRATION_TEST_FirstTopic", 15, null));
